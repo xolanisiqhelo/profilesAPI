@@ -9,10 +9,12 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
-
+import datetime
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -35,12 +37,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'api.apps.ApiConfig',
     'rest_framework',
     'djoser',
     'rest_framework_simplejwt',
     'api',
     'rest_framework_swagger',
+    'corsheaders',
 
 )
 
@@ -52,8 +54,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
-
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:4200'
+]
+# CORS_ORIGIN_ALLOW_ALL = True
 ROOT_URLCONF = 'profilesAPI.urls'
 
 TEMPLATES = [
@@ -125,9 +133,16 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # AUTH_USER_MODEL='api.User'
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+
     ),
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+}
+SIMPLE_JWT = {
+    # 'AUTH_HEADER_TYPES': ('Bearer ', )
+
 }

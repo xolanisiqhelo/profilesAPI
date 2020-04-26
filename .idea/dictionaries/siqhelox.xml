@@ -3,6 +3,7 @@
     <words>
       <w>allprofiles</w>
       <w>coreapi</w>
+      <w>corsheaders</w>
       <w>djoser</w>
       <w>simplejwt</w>
     </words>

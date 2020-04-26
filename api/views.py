@@ -1,23 +1,17 @@
-from rest_framework.generics import (ListCreateAPIView, RetrieveUpdateDestroyAPIView, )
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticated
-from .models import userProfile
-from .permission import IsOwnerProfileOrReadOnly
-from .serializers import userProfileSerializer
+from django.contrib.auth.models import User
+from .permissions import IsOwnerProfileOrReadOnly
+from .serializers import UserSerializer
 
-
-# Create your views here.
 
 class UserProfileListCreateView(ListCreateAPIView):
-    queryset = userProfile.objects.all()
-    serializer_class = userProfileSerializer
-    permission_classes = [IsAuthenticated]
-
-    def perform_create(self, serializer):
-        user = self.request.user
-        serializer.save(user=user)
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    # permission_classes = [IsAuthenticated]
 
 
-class userProfileDetailView(RetrieveUpdateDestroyAPIView):
-    queryset = userProfile.objects.all()
-    serializer_class = userProfileSerializer
+class UserProfileDetailView(RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
     permission_classes = [IsOwnerProfileOrReadOnly, IsAuthenticated]
