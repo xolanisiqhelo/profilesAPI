@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'api',
     'rest_framework_swagger',
     'corsheaders',
+    'roles'
 
 )
 
@@ -59,7 +60,8 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:4200'
+    'http://localhost:4200',
+    'http://localhost:4201'
 ]
 # CORS_ORIGIN_ALLOW_ALL = True
 ROOT_URLCONF = 'profilesAPI.urls'
@@ -138,6 +140,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+
 
     ),
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
