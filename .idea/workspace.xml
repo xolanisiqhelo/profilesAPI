@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77c9d8f5-9b0b-46b7-a383-75cb2feaaa7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/roles/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/profilesAPI/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/profilesAPI/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profilesAPI/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/profilesAPI/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +46,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/roles" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../attendance/backend/school-management-system" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -155,7 +151,8 @@
       <workItem from="1587399918910" duration="12143000" />
       <workItem from="1587717173762" duration="2307000" />
       <workItem from="1587832268734" duration="14163000" />
-      <workItem from="1588244633271" duration="1151000" />
+      <workItem from="1588244633271" duration="1794000" />
+      <workItem from="1588248577906" duration="44000" />
     </task>
     <servers />
   </component>
